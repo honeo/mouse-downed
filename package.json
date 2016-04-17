@@ -1,7 +1,7 @@
 {
   "name": "mouse-downed",
-  "version": "1.0.0",
-  "description": "[honeo/mouse-downed](https://github.com/honeo/mouse-downed)  \r [mouse-downed](https://www.npmjs.com/package/mouse-downed)",
+  "version": "1.0.1",
+  "description": "クリック押しっぱなしイベントを実装",
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js"
