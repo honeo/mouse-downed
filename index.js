@@ -17,10 +17,7 @@ let ms = 20,
 function start(){
 	const option = Object.assign({}, mouseevent_cache, {
 		bubbles: true,
-		cancelable: true,
-		timeStamp: window.performance ?
-			performance.now():
-			Date.now()
+		cancelable: true
 	});
 	let mouseevent;
 	try{
@@ -38,6 +35,8 @@ function set(e){
 		enable = true;
 		mouseevent_cache = e;
 		timerID = setInterval(start, ms);
+		window.addEventListener('mouseover', renew, true);
+		window.addEventListener('mousemove', renew, true);
 	}
 }
 
@@ -46,6 +45,8 @@ function stop(e){
 	clearInterval(timerID);
 	mouseevent_cache = null;
 	enable = false;
+	window.removeEventListener('mouseover', renew, true);
+	window.removeEventListener('mousemove', renew, true);
 }
 
 // マウスイベントのキャッシュを更新するだけ
@@ -63,8 +64,6 @@ function interval(num){
 }
 
 window.addEventListener('mousedown', set, true);
-window.addEventListener('mouseover', renew, true);
-window.addEventListener('mousemove', renew, true);
 window.addEventListener('mouseup', stop, true);
 
 export default interval;
