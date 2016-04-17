@@ -1,0 +1,39 @@
+{
+  "name": "mouse-downed",
+  "version": "1.0.0",
+  "description": "[honeo/mouse-downed](https://github.com/honeo/mouse-downed)  \r [mouse-downed](https://www.npmjs.com/package/mouse-downed)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "author": "honeo",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.7.5",
+    "babel-core": "^6.7.6",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "opener": "^1.4.1",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honeo/mouse-downed.git"
+  },
+  "keywords": [
+    "mouse",
+    "click",
+    "event",
+    "downed"
+  ],
+  "bugs": {
+    "url": "https://github.com/honeo/mouse-downed/issues"
+  },
+  "homepage": "https://github.com/honeo/mouse-downed#readme"
+}
