@@ -1,6 +1,6 @@
 {
   "name": "mouse-downed",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "クリック押しっぱなしイベントを実装",
   "main": "index.js",
   "scripts": {

@@ -13,7 +13,10 @@ let ms = 20,
 	mouseevent_cache,
 	enable;
 
-// intervalで呼ぶやつ、キャッシュしたマウスイベントを元に新イベントを作って発火
+/*
+	intervalで呼ぶやつ、キャッシュしたマウスイベントを元に新イベントを作って発火
+		Opera12番台だとdispatchEventで不正な引数になるが原因がわからん。
+*/
 function start(){
 	const option = Object.assign({}, mouseevent_cache, {
 		bubbles: true,
@@ -26,7 +29,11 @@ function start(){
 		mouseevent = document.createEvent('MouseEvents');
 		mouseevent.initEvent('mousedowned', true, true);
 	}
-	mouseevent_cache.target.dispatchEvent(mouseevent);
+	try{
+		mouseevent_cache.target.dispatchEvent(mouseevent);
+	}catch(e){
+		console.log('mouse-downed: error', e);
+	}
 }
 
 // mousedownで呼ぶやつ、既に動作中なら不発
